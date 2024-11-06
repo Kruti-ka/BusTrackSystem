@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { GoogleMap, Marker, LoadScript, InfoWindow } from '@react-google-maps/api';
-import './App.css';  // Import the CSS file
+import './App.css';  // Import the updated CSS file
 
 // Firebase configuration
 const firebaseConfig = {
@@ -43,7 +43,18 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1 className="title">BusBuddy: Track Your Bus Here</h1>
+      <h1 className="title">
+        <span className="bus">Bus</span>
+        <span className="buddy">Buddy</span>
+        <span className="subtitle">
+          : Track Your Bus
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/6544/6544041.png"
+            alt="Location Icon"
+            className="location-icon"
+          />
+        </span>
+      </h1>
 
       {loading ? (
         <div className="loading-container">
@@ -56,7 +67,7 @@ const App = () => {
             mapContainerClassName="map-container"
             center={busLocation}
             zoom={15}
-            onLoad={handleMapLoad}  // Triggered when the map is loaded
+            onLoad={handleMapLoad}
             onClick={() => setShowInfo(false)}
           >
             {mapLoaded && (
@@ -64,8 +75,8 @@ const App = () => {
                 position={busLocation}
                 onClick={() => setShowInfo(true)}
                 icon={{
-                  url: 'https://cdn-icons-png.flaticon.com/128/3448/3448339.png',  // Yellow marker for bus
-                  scaledSize: new window.google.maps.Size(40, 40), // Marker size
+                  url: 'https://cdn-icons-png.flaticon.com/128/3448/3448339.png',
+                  scaledSize: new window.google.maps.Size(40, 40),
                 }}
               />
             )}

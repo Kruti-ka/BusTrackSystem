@@ -1,47 +1,81 @@
-/* Center the entire application content */
+/* Basic container and title styling */
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 20px;
   height: 100vh;
   font-family: Arial, sans-serif;
 }
 
-/* Title styling */
 .title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #2e3b4e;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Colors and font size for title */
+.bus {
+  color: #03a4ed;
+}
+
+.buddy {
+  color: #fe3f40;
+  margin-left: 5px;
+}
+
+.subtitle {
+  color: grey;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+/* Location Icon Styling */
+.location-icon {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  margin-left: 5px; /* Spacing between text and icon */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
 }
 
 /* Map container styling */
 .map-container {
-  width: 80%;  /* Adjust the width of the map as needed */
-  height: 500px; /* Adjust the height of the map */
+  width: 80%;
+  height: 70%;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Loading screen styling */
+/* Loading spinner */
 .loading-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.5rem;
-  color: #2e3b4e;
+  justify-content: center;
+  height: 100%;
 }
 
 .loader {
-  border: 6px solid #f3f3f3;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #007BFF;
   border-radius: 50%;
-  border-top: 6px solid #3498db;
-  width: 30px;
-  height: 30px;
   animation: spin 1s linear infinite;
 }
 
+/* Animation for loading spinner */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
