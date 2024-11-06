@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders Real-Time Bus Tracking header', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/Real-Time Bus Tracking/i);
+  expect(headerElement).toBeInTheDocument();
 });
